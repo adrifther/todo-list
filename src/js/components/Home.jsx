@@ -22,14 +22,19 @@ console.log(todos);
 						onKeyDown= {(e)=> e.key === 'Enter' ? setTodos(todos.concat(inputValue)) : null}
 						placeholder="What needs to be done?"/>
 				</li>
-					{todos.map((todo, index) => (<li key={index}><div className="d-flex justify-content-between">
+					{todos.map((todo, index) => (
+						<li key={index} className="todo-item">
+							<div className="d-flex justify-content-between">
 					<div>{todo}</div>
 					<div 
-						onClick={()=>setTodos(todos.filter((_,currentIndex)=> index != currentIndex))}>
+						className="btn btn-danger delete-button"
+						onClick={()=>setTodos(todos.filter((_,currentIndex)=> index != currentIndex))}
+						style={{}}>
 					X
 					</div>
 					</div>
-				</li>))}
+				</li>
+			))}
 			</ul>
 			<div>
 				{todos.length} tasks

@@ -34,3 +34,9 @@ input {
     width: 100%;
 }
 
+.delete-button{
+    display: none;
+}
+.todo-item:hover .delete-button{
+    display: block;
+}
