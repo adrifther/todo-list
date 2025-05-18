@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import {motion, AnimatePresence} from 'framer-motion';
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -7,7 +7,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 const Home = () => {
 
-	const[ inputValue, setInputValue ] = useState("hola");
+	const[ inputValue, setInputValue ] = useState("");
 	const[ todos, setTodos ] = useState([]);	
 console.log(todos);
 	return (
@@ -37,7 +37,7 @@ console.log(todos);
 			))}
 			</ul>
 			<div>
-				{todos.length} tasks
+				{todos.length>0? `${todos.length} tasks` : `No tasks, add tasks`}
 			</div>
 		</div>
 	);
